@@ -8,7 +8,7 @@ class Board:
     def __init__(self) -> None:
         #Crear el board, especificamente los espacios que los jugadores elijiran para jugar X o 0. 
         self.board = [[" " for _ in range(3)] for _ in range(3)]
-        
+
     def display(self):
         top_border = "╔═══╦═══╦═══╗"
         middle_border = "╠═══╬═══╬═══╣"
@@ -92,7 +92,9 @@ class Menu:
         ║                                            ║
         ║            2 - Historial                   ║
         ║                                            ║
-        ║            3 - Salir del juego             ║
+        ║            3 - Controles                   ║
+        ║                                            ║
+        ║            4 - Salir del juego             ║
         ║                                            ║
         ╚════════════════════════════════════════════╝
         \n\n   """
@@ -109,6 +111,21 @@ class Menu:
         except ValueError:
             print("\n⚠️ Por favor solo ingresar números. ⚠️")
             return self.options
+        
+    def mostrar_controles(self):
+        controles_board = """
+        \nTeclado:\n
+        ╔═══╦═══╦═══╗
+        ║ q ║ w ║ e ║
+        ╠═══╬═══╬═══╣
+        ║ a ║ s ║ d ║
+        ╠═══╬═══╬═══╣
+        ║ z ║ x ║ c ║
+        ╚═══╩═══╩═══╝
+        \n
+        """
+        print(controles_board)
+        input("Presione cualquier tecla para volver al menu... ")
 #Guardar historial de juegos
 class GuardarJuego:
 
@@ -184,7 +201,9 @@ def init_game():
             game.play()
         elif eleccion ==2:
             guardar.mostrar_historial()
-        elif eleccion == 3:
+        elif eleccion ==3:
+            menu.mostrar_controles()
+        elif eleccion == 4:
             print("Gracias por jugar. Saliendo del juego...")
             break
         
