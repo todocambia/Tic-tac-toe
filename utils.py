@@ -1,4 +1,4 @@
-from constants import Player_O, Player_X
+from constants import Player_O, Player_X, controles_board
 import os
 import json
 
@@ -113,17 +113,6 @@ class Menu:
             return self.options
         
     def mostrar_controles(self):
-        controles_board = """
-        \nTeclado:\n
-        ╔═══╦═══╦═══╗
-        ║ q ║ w ║ e ║
-        ╠═══╬═══╬═══╣
-        ║ a ║ s ║ d ║
-        ╠═══╬═══╬═══╣
-        ║ z ║ x ║ c ║
-        ╚═══╩═══╩═══╝
-        \n
-        """
         print(controles_board)
         input("Presione cualquier tecla para volver al menu... ")
 #Guardar historial de juegos
